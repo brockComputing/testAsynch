@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Data.OleDb;
 
 namespace testAsynch
@@ -12,7 +13,7 @@ namespace testAsynch
         public void Connect()
         {
             dbProvider = "Provider=Microsoft.ACE.OLEDB.12.0;";
-            dbSource = @"Data Source =C:\Users\charl\OneDrive - Brockenhurst College\Visual Studio\dbStudentlates.accdb";
+            dbSource = @"Data Source =" + Environment.CurrentDirectory+ @"\dbStudentlates.accdb";
             conn.ConnectionString = dbProvider + dbSource;
            
             conn.Open();
